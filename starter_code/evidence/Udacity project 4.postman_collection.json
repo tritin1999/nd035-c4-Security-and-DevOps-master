@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "7bbcf845-4f6c-4b29-b175-5696667e64d5",
+		"name": "Udacity project 4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12253064"
+	},
+	"item": [
+		{
+			"name": "Udacity",
+			"item": [
+				{
+					"name": "Create User",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"tinnt24\",\r\n    \"password\":\"123456789\",\r\n    \"confirmPassword\":\"123456789\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login User",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"tinnt24\",\r\n    \"password\":\"123456789\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add to cart by authentication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aW5udDI0IiwiZXhwIjoxNjk3MjExMjI3fQ.itLdBxDWV8h25Nthac-L6IkesdjDU_pZX5FQh-c76XMCkuFpB-NEl5CvCSjsvDEMLBss3l2vT4BzkQAzOZznIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "BearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGFubm9uIiwiZXhwIjoxNjA0MDcwOTkyfQ.E7GF9l3mQsdAKrA10_MD4LkUIb06wbTTugpGZK5V0Etz3OGeq6j2hSGXA64ZX0pGYrpaPxv1gTZWBukuE2pGig",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"tinnt24\",\r\n    \"itemId\":1,\r\n    \"quantity\":1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cart/addToCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"addToCart"
+							],
+							"query": [
+								{
+									"key": "contentTyp",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aW5udDI0IiwiZXhwIjoxNjk3MjExMjI3fQ.itLdBxDWV8h25Nthac-L6IkesdjDU_pZX5FQh-c76XMCkuFpB-NEl5CvCSjsvDEMLBss3l2vT4BzkQAzOZznIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYwMjU2NjUwMH0.PD7cFyzcc9rIQ8oY5xgc0PaY2S5TsvXyYSFuz95fHrcsf5UokDtRVt7OaCwtNAOHLfuiSoBdNM0DE-0aehRtBA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/order/submit/tinnt24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"order",
+								"submit",
+								"tinnt24"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by username",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aW5udDI0IiwiZXhwIjoxNjk3MjExMjI3fQ.itLdBxDWV8h25Nthac-L6IkesdjDU_pZX5FQh-c76XMCkuFpB-NEl5CvCSjsvDEMLBss3l2vT4BzkQAzOZznIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGFubm9uIiwiZXhwIjoxNjA0MDcwOTkyfQ.E7GF9l3mQsdAKrA10_MD4LkUIb06wbTTugpGZK5V0Etz3OGeq6j2hSGXA64ZX0pGYrpaPxv1gTZWBukuE2pGig",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/user/tinnt24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"tinnt24"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Item By ItemId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aW5udDI0IiwiZXhwIjoxNjk3MjExMjI3fQ.itLdBxDWV8h25Nthac-L6IkesdjDU_pZX5FQh-c76XMCkuFpB-NEl5CvCSjsvDEMLBss3l2vT4BzkQAzOZznIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGFubm9uIiwiZXhwIjoxNjA0MDcwOTkyfQ.E7GF9l3mQsdAKrA10_MD4LkUIb06wbTTugpGZK5V0Etz3OGeq6j2hSGXA64ZX0pGYrpaPxv1gTZWBukuE2pGig",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/item/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"item",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Item By Name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aW5udDI0IiwiZXhwIjoxNjk3MjExMjI3fQ.itLdBxDWV8h25Nthac-L6IkesdjDU_pZX5FQh-c76XMCkuFpB-NEl5CvCSjsvDEMLBss3l2vT4BzkQAzOZznIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGFubm9uIiwiZXhwIjoxNjA0MDcwOTkyfQ.E7GF9l3mQsdAKrA10_MD4LkUIb06wbTTugpGZK5V0Etz3OGeq6j2hSGXA64ZX0pGYrpaPxv1gTZWBukuE2pGig",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/item/name/Round Widget",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"item",
+								"name",
+								"Round Widget"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Order with no order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aW5udDI0IiwiZXhwIjoxNjk3MjExMjI3fQ.itLdBxDWV8h25Nthac-L6IkesdjDU_pZX5FQh-c76XMCkuFpB-NEl5CvCSjsvDEMLBss3l2vT4BzkQAzOZznIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGFubm9uIiwiZXhwIjoxNjA0MDcwOTkyfQ.E7GF9l3mQsdAKrA10_MD4LkUIb06wbTTugpGZK5V0Etz3OGeq6j2hSGXA64ZX0pGYrpaPxv1gTZWBukuE2pGig",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/order/submit/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"order",
+								"submit",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order History By User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aW5udDI0IiwiZXhwIjoxNjk3MjExMjI3fQ.itLdBxDWV8h25Nthac-L6IkesdjDU_pZX5FQh-c76XMCkuFpB-NEl5CvCSjsvDEMLBss3l2vT4BzkQAzOZznIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGFubm9uIiwiZXhwIjoxNjA0MDcwOTkyfQ.E7GF9l3mQsdAKrA10_MD4LkUIb06wbTTugpGZK5V0Etz3OGeq6j2hSGXA64ZX0pGYrpaPxv1gTZWBukuE2pGig",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/order/history/tinnt24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"order",
+								"history",
+								"tinnt24"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aW5udDI0IiwiZXhwIjoxNjk3MjExMjI3fQ.itLdBxDWV8h25Nthac-L6IkesdjDU_pZX5FQh-c76XMCkuFpB-NEl5CvCSjsvDEMLBss3l2vT4BzkQAzOZznIw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/user/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
