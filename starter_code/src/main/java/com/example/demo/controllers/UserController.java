@@ -82,7 +82,7 @@ public class UserController {
 
             if (createUserRequest.getPassword().length() < 7 || !createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword())
             ) {
-                log.error("Credentials is not valid (password not matched/ required greater than 6 characters) for ", createUserRequest.getUsername());
+                log.error("Credentials is not valid (password not matched/ required greater than 6 characters) for " + createUserRequest.getUsername());
                 return ResponseEntity.badRequest().build();
             }
 
